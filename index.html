@@ -3,59 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Mosaic</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/lqm8rej.css">
+    <title>Spirited Away Art Shop - Home</title>
+    <link rel="stylesheet" href="css/theme.css">
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="image-mosaic">
-        <div
-          class="card card-tall card-wide"
-          style="background-image: url('https://picsum.photos/id/564/1200/800')"
-        ></div>
-        <div
-          class="card card-tall"
-          style="background-image: url('https://picsum.photos/id/566/800/530')"
-        ></div>
-        <div
-          class="card"
-          style="background-image: url('https://picsum.photos/id/575/800/530')"
-        ></div>
-        <div
-          class="card"
-          style="background-image: url('https://picsum.photos/id/626/800/530')"
-        ></div>
-        <div
-          class="card"
-          style="background-image: url('https://picsum.photos/id/667/800/530')"
-        ></div>
-        <div
-          class="card"
-          style="background-image: url('https://picsum.photos/id/678/800/530')"
-        ></div>
-        <div
-          class="card card-wide"
-          style="background-image: url('https://picsum.photos/id/695/800/530')"
-        ></div>
-        <div
-          class="card"
-          style="background-image: url('https://picsum.photos/id/683/800/530')"
-        ></div>
-        <div
-          class="card"
-          style="background-image: url('https://picsum.photos/id/693/800/530')"
-        ></div>
-        <div
-          class="card"
-          style="background-image: url('https://picsum.photos/id/715/800/530')"
-        ></div>
-        <div
-          class="card"
-          style="background-image: url('https://picsum.photos/id/610/800/530')"
-        ></div>
-        <div
-          class="card"
-          style="background-image: url('https://picsum.photos/id/599/800/530')"
-        ></div>
-    </div>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Spirited Art</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="cart.html">Cart</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>Welcome to a World of Enchanted Art</h1>
+                <p class="hero-text">Where imagination takes flight and every brushstroke tells a magical story inspired by the beloved world of Studio Ghibli.</p>
+                <a href="gallery.html" class="btn btn-large">Explore the Gallery</a>
+            </div>
+        </section>
+
+        <!-- About Artist Section -->
+        <section class="about-artist">
+            <div class="container">
+                <h2>About the Artist</h2>
+                <div class="artist-content">
+                    <div class="artist-image">
+                        <div class="image-placeholder">
+                            <!-- Artist photo will be added later -->
+                            <i class="fas fa-user-artist"></i>
+                        </div>
+                    </div>
+                    <div class="artist-bio">
+                        <p>Through the lens of Ghibli's enchanting universe, I create artwork that bridges the gap between reality and dreams. Each piece is a window into a world where spirits dance, nature thrives, and magic lives in the everyday moments.</p>
+                        <p>My journey as an artist began with a deep appreciation for the masterful storytelling and visual poetry of Studio Ghibli. Today, I blend traditional techniques with whimsical elements to create pieces that capture the heart and imagination.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Artwork Section -->
+        <section class="featured-artwork">
+            <div class="container">
+                <h2>Featured Pieces</h2>
+                <div class="carousel-container">
+                    <div class="carousel-viewport">
+                        <div class="carousel-track">
+                            <div class="carousel-item active">
+                                <a href="gallery.html" class="artwork-link">
+                                    <img src="https://picsum.photos/id/564/1200/800" alt="Bathhouse at Twilight">
+                                    <div class="artwork-info">
+                                        <h3>Bathhouse at Twilight</h3>
+                                        <span>View in Gallery</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="gallery.html" class="artwork-link">
+                                    <img src="https://picsum.photos/id/566/800/530" alt="Spirit Lanterns">
+                                    <div class="artwork-info">
+                                        <h3>Spirit Lanterns</h3>
+                                        <span>View in Gallery</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="gallery.html" class="artwork-link">
+                                    <img src="https://picsum.photos/id/575/800/530" alt="No-Face's Garden">
+                                    <div class="artwork-info">
+                                        <h3>No-Face's Garden</h3>
+                                        <span>View in Gallery</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-nav carousel-prev" aria-label="Previous artwork">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-nav carousel-next" aria-label="Next artwork">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Spirited Art. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="js/carousel.js" type="module"></script>
+    
+    <svg>
+        <defs>
+            <!-- filter heavily inspired by https://codepen.io/sevenissimo/details/Kojaqj -->
+            <filter id="watercolor">
+                <feTurbulence result="noise-lg" type="fractalNoise" baseFrequency=".0125" NumOctaves="2" seed="1222" />
+                <feTurbulence result="noise-md" type="fractalNoise" baseFrequency=".12" NumOctaves="3" seed="11413" />
+                <!-- BaseGraphic w/ chroma variation -->
+                <feComposite result="BaseGraphic" in="SourceGraphic" in2="noise-lg" operator="arithmetic" k1="0.3" k2="0.45" k4="-.07" />
+                <!-- 1st layer of paint w/more water -->
+                <feMorphology id="water" result="layer-1" in="BaseGraphic" operator="dilate" radius="0.5" />
+                <feDisplacementMap result="layer-1" in="layer-1" in2="noise-lg" xChannelSelector="R" yChannelSelector="B" scale="2" />
+                <feDisplacementMap result="layer-1" in="layer-1" in2="noise-md" xChannelSelector="R" yChannelSelector="B" scale="3" />
+                <feDisplacementMap result="mask" in="layer-1" in2="noise-lg" xChannelSelector="A" yChannelSelector="A" scale="4" />
+                <feGaussianBlur result="mask" in="mask" stdDeviation="6" />
+                <feComposite result="layer-1" in="layer-1" in2="mask" operator="arithmetic" k1="1" k2=".25" k3="-.25" k4="0" />
+                <!-- 2nd layer of paint w/more pigment -->
+                <feDisplacementMap result="layer-2" in="BaseGraphic" in2="noise-lg" xChannelSelector="G" yChannelSelector="R" scale="2" />
+                <feDisplacementMap result="layer-2" in="layer-2" in2="noise-md" xChannelSelector="A" yChannelSelector="G" scale="3" />
+                <feDisplacementMap result="glow" in="BaseGraphic" in2="noise-lg" xChannelSelector="R" yChannelSelector="A" scale="5" />
+                <feMorphology result="glow-diff" in="glow" operator="erode" radius="2" />
+                <feComposite result="glow" in="glow" in2="glow-diff" operator="out" />
+                <feGaussianBlur result="glow" in="glow" stdDeviation=".5" />
+                <feComposite id="color" result="layer-2" in="layer-2" in2="glow" operator="arithmetic" k1="1.2" k2="0.55" k3=".3" k4="-0.2" />
+                <!-- merge 'em all  -->
+                <feComposite result="watercolor" in="layer-1" in2="layer-2" operator="over" />
+            </filter>
+
+            <filter id="watercolor2">
+                <feTurbulence result="noise-lg" type="fractalNoise" baseFrequency=".0125" NumOctaves="2" seed="1222" />
+                <feTurbulence result="noise-md" type="fractalNoise" baseFrequency=".12" NumOctaves="3" seed="11413" />
+                <!-- BaseGraphic w/ chroma variation -->
+                <feComposite result="BaseGraphic" in="SourceGraphic" in2="noise-lg" operator="arithmetic" k1="0.3" k2="0.35" k4="-.05" />
+                <feDisplacementMap result="layer-2" in="BaseGraphic" in2="noise-lg" xChannelSelector="G" yChannelSelector="R" scale="2" />
+                <feDisplacementMap result="layer-2" in="layer-2" in2="noise-md" xChannelSelector="A" yChannelSelector="G" scale="3" />
+                <feDisplacementMap result="glow" in="BaseGraphic" in2="noise-lg" xChannelSelector="R" yChannelSelector="A" scale="4" />
+                <feMorphology result="glow-diff" in="glow" operator="erode" radius="2" />
+                <feComposite result="glow" in="glow" in2="glow-diff" operator="out" />
+                <feGaussianBlur result="glow" in="glow" stdDeviation="4" />
+                <feComposite id="color" result="layer-2" in="layer-2" in2="glow" operator="arithmetic" k1="0.65" k2="1.0" k3="0.4" k4="-0.15" />
+            </filter>
+        </defs>
+    </svg>
 </body>
 </html>
