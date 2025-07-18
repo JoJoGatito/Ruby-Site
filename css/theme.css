@@ -1,10 +1,28 @@
 /* Spirited Away Theme Colors */
 :root {
+  /* Light theme colors */
   --primary: #AED9E0;    /* Soft blue - inspired by bath house */
   --secondary: #FFA69E;  /* Soft pink - inspired by Chihiro */
   --accent: #B8F2E6;     /* Mint green - inspired by No-Face */
   --background: #fff0cb; /* Cream - parchment feel */
   --dark: #392b17;       /* Warm brown - for text */
+
+  /* Dark theme colors */
+  --primary-dark: #5a848a;    /* Deeper muted blue */
+  --secondary-dark: #a05f5a;  /* Muted reddish-brown */
+  --accent-dark: #4d8a7f;     /* Deep teal */
+  --background-dark: #2a2433; /* Deep purple-gray */
+  --text-dark: #e4d7b9;       /* Light warm cream for text */
+
+  /* Current theme variables */
+  --primary-current: var(--primary);
+  --secondary-current: var(--secondary);
+  --accent-current: var(--accent);
+  --background-current: var(--background);
+  --text-current: var(--dark);
+
+  /* Theme transition */
+  --theme-transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, filter 0.5s ease;
   
   /* Watercolor effect variables */
   --shadow: 4px;
@@ -14,14 +32,24 @@
   --bri: 1;
 }
 
+/* Dark mode styles */
+html.dark-mode {
+  --primary-current: var(--primary-dark);
+  --secondary-current: var(--secondary-dark);
+  --accent-current: var(--accent-dark);
+  --background-current: var(--background-dark);
+  --text-current: var(--text-dark);
+}
+
 /* Base Styles */
 body {
   margin: 0;
   padding: 0;
   font-family: duper, sans-serif;
   letter-spacing: 0.05em;
-  background-color: var(--background);
-  color: var(--dark);
+  background-color: var(--background-current);
+  color: var(--text-current);
+  transition: var(--theme-transition);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -59,14 +87,103 @@ nav {
 }
 
 .nav-links a {
-  color: var(--dark);
+  color: var(--text-current);
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: var(--theme-transition);
 }
 
 .nav-links a:hover {
-  color: var(--secondary);
+  color: var(--secondary-current);
+}
+
+/* Theme Toggle Styles */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: var(--theme-transition);
+    position: relative;
+}
+
+.theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.theme-toggle:hover .lantern-glow {
+    transform: scale(1.1);
+    filter: blur(3px);
+}
+
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--accent-current);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(var(--accent-current), 0.2);
+}
+
+.theme-toggle:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Keyboard navigation indicator */
+.theme-toggle::after {
+    content: "Press Enter to toggle";
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    color: var(--text-current);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.theme-toggle:focus-visible::after {
+    opacity: 1;
+}
+
+.lantern-icon {
+    transition: var(--theme-transition);
+}
+
+.lantern-top {
+    fill: var(--text-current);
+}
+
+.lantern-body {
+    fill: var(--text-current);
+    stroke: var(--text-current);
+    stroke-width: 1;
+}
+
+.lantern-glow {
+    fill: #FFB86C;
+    opacity: 0.8;
+    filter: blur(2px);
+    transition: var(--theme-transition);
+}
+
+.lantern-lines {
+    stroke: var(--text-current);
+    opacity: 0.5;
+    fill: none;
+}
+
+.theme-label {
+    color: var(--text-current);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Dark mode lantern styles */
+html.dark-mode .lantern-glow {
+    fill: #6272A4;
+    opacity: 0.6;
 }
 
 /* Footer Styles */
@@ -97,14 +214,14 @@ footer:before {
 }
 
 .social-links a {
-  color: var(--dark);
+  color: var(--text-current);
   text-decoration: none;
   margin: 0 1rem;
-  transition: color 0.3s ease;
+  transition: var(--theme-transition);
 }
 
 .social-links a:hover {
-  color: var(--secondary);
+  color: var(--secondary-current);
 }
 
 /* Main Content Area */
@@ -176,7 +293,7 @@ main {
   --sat: 170%;
   --bri: 1.6;
   --con: 2;
-  color: var(--dark);
+  color: var(--text-current);
   border-radius: 100vw;
 }
 
@@ -206,7 +323,7 @@ main {
     font-family: "sketchnote-text", sans-serif;
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
-    color: var(--dark);
+    color: var(--text-current);
     font-weight: 700;
     font-style: normal;
 }
@@ -257,7 +374,7 @@ main {
 }
 
 .image-placeholder {
-    background-color: var(--accent);
+    background-color: var(--accent-current);
     border-radius: 50%;
     width: 200px;
     height: 200px;
@@ -288,7 +405,7 @@ main {
     text-align: center;
     margin-bottom: 2rem;
     font-size: 2rem;
-    color: var(--dark);
+    color: var(--text-current);
     font-weight: 700;
     font-style: normal;
 }
@@ -310,7 +427,7 @@ main {
     box-shadow: 0 8px 24px rgba(94, 100, 114, 0.15);
     position: relative;
     z-index: 1;
-    background: var(--background);
+    background: var(--background-current);
     height: 400px; /* Match image height */
 }
 
@@ -382,28 +499,6 @@ main {
     }
 }
 
-@keyframes burnAway {
-    0% {
-        clip-path: circle(150% at center);
-        transform: scale(1);
-    }
-    25% {
-        clip-path: circle(70% at center);
-        transform: scale(1.01);
-    }
-    50% {
-        clip-path: circle(50% at center);
-        transform: scale(1);
-    }
-    75% {
-        clip-path: circle(25% at center);
-        transform: scale(0.99);
-    }
-    100% {
-        clip-path: circle(0% at center);
-        transform: scale(0.98);
-    }
-}
 
 /* Cart Section */
 .cart-section {
@@ -456,15 +551,9 @@ main {
     font-family: "sketchnote-text", sans-serif;
     font-size: 2rem;
     margin-bottom: 1.5rem;
-    color: var(--dark);
+    color: var(--text-current);
     font-weight: 700;
     font-style: normal;
-}
-    }
-    100% {
-        clip-path: circle(0% at center);
-        transform: scale(0.98);
-    }
 }
 
 /* Artwork Link - Enhanced Accessibility */
@@ -478,7 +567,7 @@ main {
 }
 
 .artwork-link:focus {
-    outline: 3px solid var(--primary);
+    outline: 3px solid var(--primary-current);
     outline-offset: 2px;
 }
 

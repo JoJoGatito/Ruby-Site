@@ -14,7 +14,7 @@
             position: absolute;
             top: -8px;
             right: -8px;
-            background: var(--accent-color);
+            background: var(--accent-current);
             color: white;
             border-radius: 50%;
             width: 20px;
@@ -34,11 +34,11 @@
         }
 
         .cart-confirmation-content {
-            background: var(--accent-color);
+            background: var(--accent-current);
             color: white;
             padding: 15px 25px;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
 
         .cart-confirmation.fade-out {
@@ -69,6 +69,19 @@
                     Cart
                     <span class="cart-count">0</span>
                 </a>
+                <div class="theme-toggle" role="button" tabindex="0" aria-label="Toggle dark mode">
+                    <svg class="lantern-icon" width="24" height="32" viewBox="0 0 24 32">
+                        <!-- Top part -->
+                        <path class="lantern-top" d="M10 2h4l2 4H8z" />
+                        <!-- Main body -->
+                        <path class="lantern-body" d="M6 6h12v16c0 2-2.7 4-6 4s-6-2-6-4z" />
+                        <!-- Inner glow -->
+                        <circle class="lantern-glow" cx="12" cy="16" r="5" />
+                        <!-- Decorative lines -->
+                        <path class="lantern-lines" d="M8 8h8M8 12h8M8 16h8M8 20h8" stroke-width="0.5" />
+                    </svg>
+                    <span class="theme-label">Light</span>
+                </div>
             </div>
         </nav>
     </header>
@@ -248,6 +261,7 @@
         </div>
     </div>
 
+    <script src="js/theme.js" type="module"></script>
     <script type="module">
         import CartSystem from './js/cart.js';
 
